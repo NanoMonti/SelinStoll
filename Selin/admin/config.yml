@@ -1,0 +1,54 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+locale: es
+
+collections:
+  - name: "pagina"
+    label: "Página principal"
+    files:
+
+      - name: "inicio"
+        label: "🏠 Inicio"
+        file: "_content/inicio.json"
+        fields:
+          - { label: "Título principal", name: "titulo", widget: "string" }
+          - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+          - { label: "Texto del botón principal", name: "boton1", widget: "string" }
+          - { label: "Texto del botón secundario", name: "boton2", widget: "string" }
+
+      - name: "sobre_mi"
+        label: "👤 Sobre mí"
+        file: "_content/sobre_mi.json"
+        fields:
+          - { label: "Foto", name: "foto", widget: "image", required: false }
+          - { label: "Título", name: "titulo", widget: "string" }
+          - { label: "Texto 1", name: "texto1", widget: "text" }
+          - { label: "Texto 2", name: "texto2", widget: "text" }
+          - { label: "Texto 3", name: "texto3", widget: "text" }
+
+      - name: "servicios"
+        label: "🌿 Servicios"
+        file: "_content/servicios.json"
+        fields:
+          - label: "Servicios"
+            name: "lista"
+            widget: "list"
+            fields:
+              - { label: "Icono (emoji)", name: "icono", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+              - { label: "Precio", name: "precio", widget: "string" }
+
+      - name: "contacto"
+        label: "✉️ Contacto"
+        file: "_content/contacto.json"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Ciudad", name: "ciudad", widget: "string" }
+          - { label: "Instagram", name: "instagram", widget: "string" }
+          - { label: "Frase inspiradora", name: "frase", widget: "text" }

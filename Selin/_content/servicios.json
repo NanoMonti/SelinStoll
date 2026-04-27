@@ -1,0 +1,28 @@
+{
+  "lista": [
+    {
+      "icono": "🪷",
+      "titulo": "Sesión Individual",
+      "descripcion": "Una hora contigo, adaptada a tu momento y necesidades. Ideal para comenzar o profundizar en tu práctica meditativa.",
+      "precio": "Sesión 60 min · CHF 90"
+    },
+    {
+      "icono": "🌀",
+      "titulo": "Curso de Mindfulness",
+      "descripcion": "Programa de 8 semanas basado en MBSR para reducir el estrés y desarrollar una presencia plena en el día a día.",
+      "precio": "8 semanas · CHF 480"
+    },
+    {
+      "icono": "👥",
+      "titulo": "Clases en Grupo",
+      "descripcion": "Sesiones semanales en grupos reducidos. Un espacio de práctica compartida, calidez y comunidad.",
+      "precio": "Por clase · CHF 25"
+    },
+    {
+      "icono": "🌄",
+      "titulo": "Retiro de Fin de Semana",
+      "descripcion": "Dos días de inmersión profunda en la naturaleza. Silencio, meditación, respiración y reconexión total.",
+      "precio": "2 días · CHF 350"
+    }
+  ]
+}
