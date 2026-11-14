@@ -58,7 +58,6 @@ collections:
             widget: object
             fields:
               - { label: Grosser Titel (auf dem Bild), name: titel, widget: string }
-              - { label: Text des Knopfs «Zur Anmeldung», name: knopf, widget: string }
 
           - label: Was ist MBSR?
             name: kurs
