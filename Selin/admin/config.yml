@@ -5,7 +5,7 @@
 
 backend:
   name: git-gateway
-  branch: neu            # Vorschau-Zweig. Beim Livegang auf "main" ändern.
+  branch: main           # Live: Änderungen erscheinen direkt auf selinstoll.ch
 
 # Nur auf localhost aktiv (Test mit "npx decap-server"); online ohne Wirkung.
 local_backend: true
