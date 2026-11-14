@@ -1,20 +1,47 @@
 {
-  "seite": {
-    "titel": "Selin Stoll – MBSR & Achtsamkeit in Zürich",
-    "beschreibung": "MBSR-Kurs «Stressbewältigung durch Achtsamkeit» mit Selin Stoll in Zürich."
+  "daten": {
+    "titel": "Kursdaten",
+    "kurstermine": "2. März – 20. April 2027",
+    "tag_ort": "Born Lifeeeeeeeeee",
+    "karte_link": "https://maps.app.goo.gl/EbiFyoYE2J3AHVWLA",
+    "kosten": "CHF 520",
+    "ort": "Wehntalerstrasse 3, 8057 Zürich",
+    "tag_text": "Der Tag der Achtsamkeit gehört zum Kurs: ein ganzer Tag in Stille – gemeinsam schweigen, sitzen, gehen und sich achtsam bewegen. Ein Raum, um die Übung zu vertiefen und ganz anzukommen.",
+    "tag": "10. April 2027",
+    "gruppe": "4 bis max. 8 Teilnehmende",
+    "beschriftungen": {
+      "kurs": "MBSR-Kurs",
+      "tag": "Tag der Achtsamkeit",
+      "ort": "Ort",
+      "gruppe": "Gruppe",
+      "kosten": "Kosten"
+    },
+    "karte_text": "Auf der Karte ansehen"
   },
-  "kopf": {
-    "untertitel": "Achtsamkeit · MBSR · Zürich",
-    "navigation": [
-      { "text": "Kurs", "ziel": "#kurs" },
-      { "text": "Daten", "ziel": "#daten" },
-      { "text": "Über mich", "ziel": "#leitung" },
-      { "text": "Anmeldung", "ziel": "#anmeldung" }
-    ]
+  "kontakt": {
+    "titel": "Kontakt",
+    "text": "Haben Sie Fragen? Ich freue mich auf Ihre Nachricht.",
+    "email": "[E-Mail-Adresse folgt]",
+    "telefon": ""
   },
   "start": {
     "titel": "Ankommen im Moment",
     "knopf": "Zur Anmeldung"
+  },
+  "seite": {
+    "titel": "Selin Stoll – MBSR & Achtsamkeit in Zürich",
+    "beschreibung": "MBSR-Kurs «Stressbewältigung durch Achtsamkeit» mit Selin Stoll in Zürich."
+  },
+  "leitung": {
+    "titel": "Kursleitung",
+    "name": "Selin Stoll",
+    "rolle": "[Ausbildung / Qualifikation folgt]",
+    "foto": "",
+    "foto_alt": "Porträt von Selin Stoll",
+    "wer_titel": "Wer ich bin",
+    "wer_text": [
+      "[Persönlicher Text von Selin folgt – wer sie ist, wie sie zur Achtsamkeit gekommen ist und was ihr in der Arbeit mit Gruppen wichtig ist.]"
+    ]
   },
   "kurs": {
     "titel": "Was ist MBSR?",
@@ -39,35 +66,10 @@
     ],
     "hinweis": "Der Kurs ist eine Methode zur Selbsthilfe. Er ersetzt keine medizinische oder psychotherapeutische Behandlung."
   },
-  "daten": {
-    "titel": "Kursdaten",
-    "kurstermine": "2. März – 20. April 2027",
-    "tag": "10. April 2027",
-    "ort": "Wehntalerstrasse 3, 8057 Zürich",
-    "gruppe": "4 bis max. 8 Teilnehmende",
-    "kosten": "CHF 520",
-    "tag_text": "Der Tag der Achtsamkeit gehört zum Kurs: ein ganzer Tag in Stille – gemeinsam schweigen, sitzen, gehen und sich achtsam bewegen. Ein Raum, um die Übung zu vertiefen und ganz anzukommen.",
-    "tag_ort": "born.life",
-    "karte_text": "Auf der Karte ansehen",
-    "karte_link": "https://maps.app.goo.gl/EbiFyoYE2J3AHVWLA",
-    "beschriftungen": {
-      "kurs": "MBSR-Kurs",
-      "tag": "Tag der Achtsamkeit",
-      "ort": "Ort",
-      "gruppe": "Gruppe",
-      "kosten": "Kosten"
-    }
-  },
-  "leitung": {
-    "titel": "Kursleitung",
-    "name": "Selin Stoll",
-    "rolle": "[Ausbildung / Qualifikation folgt]",
-    "foto": "",
-    "foto_alt": "Porträt von Selin Stoll",
-    "wer_titel": "Wer ich bin",
-    "wer_text": [
-      "[Persönlicher Text von Selin folgt – wer sie ist, wie sie zur Achtsamkeit gekommen ist und was ihr in der Arbeit mit Gruppen wichtig ist.]"
-    ]
+  "fuss": {
+    "text": "© 2027 Selin Stoll · Zürich",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz"
   },
   "anmeldung": {
     "titel": "Anmeldung",
@@ -77,26 +79,38 @@
       "[Abmelde- und Rückerstattungsbedingungen folgen]"
     ],
     "formular": {
-      "vorname": "Vorname",
-      "nachname": "Nachname",
-      "email": "E-Mail",
-      "telefon": "Telefon",
-      "kurs": "Kurs",
-      "kurs_optionen": ["MBSR-Kurs März 2027"],
       "nachricht": "Nachricht (optional)",
       "zustimmung": "Ich habe die Teilnahmebedingungen gelesen und bin einverstanden.",
-      "knopf": "Verbindlich anmelden"
+      "knopf": "Verbindlich anmelden",
+      "nachname": "Nachname",
+      "vorname": "Vorname",
+      "kurs": "Kurs",
+      "kurs_optionen": [
+        "MBSR-Kurs März 2027"
+      ],
+      "telefon": "Telefon",
+      "email": "E-Mail"
     }
   },
-  "kontakt": {
-    "titel": "Kontakt",
-    "text": "Haben Sie Fragen? Ich freue mich auf Ihre Nachricht.",
-    "email": "[E-Mail-Adresse folgt]",
-    "telefon": ""
-  },
-  "fuss": {
-    "text": "© 2027 Selin Stoll · Zürich",
-    "impressum": "Impressum",
-    "datenschutz": "Datenschutz"
+  "kopf": {
+    "untertitel": "Achtsamkeit · MBSR · Zürich",
+    "navigation": [
+      {
+        "text": "Kurs",
+        "ziel": "#kurs"
+      },
+      {
+        "text": "Daten",
+        "ziel": "#daten"
+      },
+      {
+        "text": "Über mich",
+        "ziel": "#leitung"
+      },
+      {
+        "text": "Anmeldung",
+        "ziel": "#anmeldung"
+      }
+    ]
   }
 }
