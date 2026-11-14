@@ -1,0 +1,102 @@
+{
+  "seite": {
+    "titel": "Selin Stoll – MBSR & Achtsamkeit in Zürich",
+    "beschreibung": "MBSR-Kurs «Stressbewältigung durch Achtsamkeit» mit Selin Stoll in Zürich."
+  },
+  "kopf": {
+    "untertitel": "Achtsamkeit · MBSR · Zürich",
+    "navigation": [
+      { "text": "Kurs", "ziel": "#kurs" },
+      { "text": "Daten", "ziel": "#daten" },
+      { "text": "Über mich", "ziel": "#leitung" },
+      { "text": "Anmeldung", "ziel": "#anmeldung" }
+    ]
+  },
+  "start": {
+    "titel": "Ankommen im Moment",
+    "text": "MBSR – Stressbewältigung durch Achtsamkeit. Ein Kurs in Zürich.",
+    "knopf": "Zur Anmeldung"
+  },
+  "kurs": {
+    "titel": "Was ist MBSR?",
+    "absaetze": [
+      "MBSR steht für «Mindfulness-Based Stress Reduction», auf Deutsch: Stressbewältigung durch Achtsamkeit. Das Programm wurde 1979 von Jon Kabat-Zinn an der University of Massachusetts entwickelt und ist heute eines der am besten erforschten Achtsamkeitsprogramme.",
+      "Achtsamkeit bedeutet, mit dem in Kontakt zu sein, was gerade da ist – ohne sich in Gedanken, Sorgen oder Bewertungen zu verlieren. Diese Fähigkeit lässt sich üben: im Kurs, in der Gruppe und im eigenen Alltag.",
+      "Neben angeleiteten Übungen gibt es kurze Impulse und Austausch in der Gruppe. Ein wichtiger Teil ist das eigene Üben zu Hause zwischen den Kursterminen."
+    ],
+    "elemente_titel": "Was wir üben",
+    "elemente": [
+      "Body-Scan – den Körper achtsam wahrnehmen",
+      "Sanfte, achtsame Bewegung",
+      "Meditation im Sitzen und im Gehen",
+      "Achtsamkeit im Alltag"
+    ],
+    "fuer_wen_titel": "Für wen ist der Kurs?",
+    "fuer_wen": [
+      "Für Menschen, die sich beruflich oder privat gestresst fühlen",
+      "die gelassener mit Belastungen umgehen möchten",
+      "die bewusster leben möchten",
+      "Vorkenntnisse sind nicht nötig"
+    ],
+    "hinweis": "Der Kurs ist eine Methode zur Selbsthilfe. Er ersetzt keine medizinische oder psychotherapeutische Behandlung."
+  },
+  "daten": {
+    "titel": "Kursdaten",
+    "kurstermine": "2. März – 20. April 2027",
+    "tag": "10. April 2027",
+    "ort": "Wehntalerstrasse 3, 8057 Zürich",
+    "gruppe": "4 bis max. 8 Teilnehmende",
+    "kosten": "CHF 520",
+    "tag_text": "Der Tag der Achtsamkeit gehört zum Kurs: ein ganzer Tag in Stille – gemeinsam schweigen, sitzen, gehen und sich achtsam bewegen.",
+    "karte_text": "Ort auf der Karte ansehen",
+    "karte_link": "https://maps.app.goo.gl/EbiFyoYE2J3AHVWLA",
+    "beschriftungen": {
+      "kurstermine": "Kurstermine",
+      "tag": "Tag der Achtsamkeit",
+      "ort": "Ort",
+      "gruppe": "Gruppe",
+      "kosten": "Kosten"
+    }
+  },
+  "leitung": {
+    "titel": "Kursleitung",
+    "name": "Selin Stoll",
+    "rolle": "[Ausbildung / Qualifikation folgt]",
+    "foto": "",
+    "foto_alt": "Porträt von Selin Stoll",
+    "wer_titel": "Wer ich bin",
+    "wer_text": [
+      "[Persönlicher Text von Selin folgt – wer sie ist, wie sie zur Achtsamkeit gekommen ist und was ihr in der Arbeit mit Gruppen wichtig ist.]"
+    ]
+  },
+  "anmeldung": {
+    "titel": "Anmeldung",
+    "text": "Melden Sie sich mit dem Formular an. Sie erhalten danach eine Bestätigung per E-Mail mit allen Angaben zur Zahlung.",
+    "bedingungen": [
+      "Die Anmeldung ist nach Eingang der Zahlung definitiv.",
+      "[Abmelde- und Rückerstattungsbedingungen folgen]"
+    ],
+    "formular": {
+      "vorname": "Vorname",
+      "nachname": "Nachname",
+      "email": "E-Mail",
+      "telefon": "Telefon",
+      "kurs": "Kurs",
+      "kurs_optionen": ["MBSR-Kurs März 2027"],
+      "nachricht": "Nachricht (optional)",
+      "zustimmung": "Ich habe die Teilnahmebedingungen gelesen und bin einverstanden.",
+      "knopf": "Verbindlich anmelden"
+    }
+  },
+  "kontakt": {
+    "titel": "Kontakt",
+    "text": "Haben Sie Fragen? Ich freue mich auf Ihre Nachricht.",
+    "email": "[E-Mail-Adresse folgt]",
+    "telefon": ""
+  },
+  "fuss": {
+    "text": "© 2027 Selin Stoll · Zürich",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz"
+  }
+}

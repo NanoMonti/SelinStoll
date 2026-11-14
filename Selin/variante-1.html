@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selin Stoll – MBSR</title>
+<meta name="description" content="">
+<style>
+  :root {
+    --bg: #f6f3ee; --text: #2b3433; --muted: #5d6967; --accent: #2c6e6a; --line: #ddd6cb; --card: #fffdf9;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.7 var(--sans); }
+  h1, h2, h3 { font-family: var(--serif); font-weight: normal; line-height: 1.25; }
+  a { color: var(--accent); }
+  mark.offen { background: #fff1a8; color: inherit; padding: 0 .2em; border-radius: 3px; }
+
+  .hero { min-height: 88vh; background: url(bilder/meer-breit.jpg) center/cover; position: relative; color: #fff; display: flex; flex-direction: column; }
+  .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,30,32,.55), rgba(10,30,32,0) 65%), linear-gradient(180deg, rgba(10,30,32,.35), rgba(10,30,32,.1) 40%, rgba(10,30,32,.5)); }
+  .hero > * { position: relative; }
+  .bar { display: flex; justify-content: flex-end; align-items: center; padding: 22px clamp(16px, 5vw, 56px); gap: 16px; flex-wrap: wrap; }
+  .bar .name { font-family: var(--serif); font-size: 22px; letter-spacing: .02em; }
+  .bar nav { display: flex; gap: 22px; flex-wrap: wrap; }
+  .bar nav a { color: #fff; text-decoration: none; font-size: 15px; opacity: .9; }
+  .hero-text { margin: auto clamp(16px, 5vw, 56px) clamp(40px, 8vh, 80px); max-width: 640px; }
+  .kicker { text-transform: uppercase; letter-spacing: .18em; font-size: 13px; margin: 0 0 10px; }
+  .hero h1 { font-size: clamp(38px, 6vw, 64px); margin: 0 0 14px; }
+  .hero-text p { font-size: 19px; margin: 0 0 26px; }
+  .btn { display: inline-block; background: #fff; color: var(--accent); text-decoration: none; padding: 12px 26px; border-radius: 999px; font-weight: 600; border: 0; font: 600 16px var(--sans); cursor: pointer; }
+
+  main { max-width: 680px; margin: 0 auto; padding: 0 16px; }
+  section { padding: 72px 0 8px; }
+  section + section { border-top: 1px solid var(--line); margin-top: 56px; }
+  h2 { font-size: 34px; margin: 0 0 20px; color: var(--accent); }
+  h3 { font-size: 22px; margin: 32px 0 10px; }
+  ul { padding-left: 1.2em; } li { margin: 4px 0; }
+  .hinweis { color: var(--muted); font-size: 15px; font-style: italic; }
+  .zeitraum { font-family: var(--serif); font-size: 26px; margin: 0 0 18px; }
+  dl { margin: 0; } dl div { display: grid; grid-template-columns: 140px 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  dt { color: var(--muted); } dd { margin: 0; }
+  .ort { margin-top: 18px; padding: 18px 20px; background: var(--card); border-left: 3px solid var(--accent); }
+  .ort strong { display: block; }
+  .leitung { display: grid; grid-template-columns: 150px 1fr; gap: 28px; align-items: start; }
+  .foto { width: 150px; height: 150px; border-radius: 50%; background: #e3ddd2; display: grid; place-items: center; color: var(--muted); font-size: 13px; text-align: center; overflow: hidden; }
+  .foto img { width: 100%; height: 100%; object-fit: cover; }
+  .rolle { color: var(--muted); margin: -12px 0 0; }
+  form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 26px; background: var(--card); padding: 24px; border: 1px solid var(--line); border-radius: 6px; }
+  label { display: grid; gap: 6px; font-size: 14px; color: var(--muted); }
+  label.ganz { grid-column: 1 / -1; }
+  input, select, textarea { font: 16px var(--sans); padding: 10px 12px; border: 1px solid var(--line); border-radius: 4px; background: #fff; color: var(--text); }
+  label.check { grid-column: 1 / -1; display: flex; gap: 10px; align-items: flex-start; color: var(--text); }
+  label.check input { margin-top: 6px; }
+  form .btn { grid-column: 1 / -1; justify-self: start; background: var(--accent); color: #fff; }
+  footer { text-align: center; color: var(--muted); font-size: 14px; padding: 64px 16px 40px; }
+  footer a { color: var(--muted); margin: 0 8px; }
+  @media (max-width: 600px) {
+    .leitung { grid-template-columns: 1fr; }
+    form { grid-template-columns: 1fr; padding: 18px; }
+    dl div { grid-template-columns: 1fr; gap: 2px; }
+    .bar nav { gap: 14px; }
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="bar">
+    <nav data-nav="kopf.navigation"></nav>
+  </div>
+  <div class="hero-text">
+    <p class="kicker" data-t="kopf.untertitel"></p>
+    <h1 data-t="start.titel"></h1>
+    <p><span data-t="start.text"></span><br><strong data-t="daten.kurstermine"></strong></p>
+    <a class="btn" href="#anmeldung" data-t="start.knopf"></a>
+  </div>
+</header>
+
+<main>
+  <section id="kurs">
+    <h2 data-t="kurs.titel"></h2>
+    <div data-ps="kurs.absaetze"></div>
+    <h3 data-t="kurs.elemente_titel"></h3>
+    <ul data-list="kurs.elemente"></ul>
+    <h3 data-t="kurs.fuer_wen_titel"></h3>
+    <ul data-list="kurs.fuer_wen"></ul>
+    <p class="hinweis" data-t="kurs.hinweis"></p>
+  </section>
+
+  <section id="daten">
+    <h2 data-t="daten.titel"></h2>
+    <dl>
+      <div><dt data-t="daten.beschriftungen.kurstermine"></dt><dd data-t="daten.kurstermine"></dd></div>
+      <div><dt data-t="daten.beschriftungen.tag"></dt><dd data-t="daten.tag"></dd></div>
+      <div><dt data-t="daten.beschriftungen.ort"></dt><dd><span data-t="daten.ort"></span><br><a data-href="daten.karte_link" data-t="daten.karte_text" target="_blank" rel="noopener"></a></dd></div>
+      <div><dt data-t="daten.beschriftungen.gruppe"></dt><dd data-t="daten.gruppe"></dd></div>
+      <div><dt data-t="daten.beschriftungen.kosten"></dt><dd data-t="daten.kosten"></dd></div>
+    </dl>
+    <p class="ort" data-t="daten.tag_text"></p>
+  </section>
+
+  <section id="leitung">
+    <h2 data-t="leitung.titel"></h2>
+    <div class="leitung">
+      <div class="foto" data-foto="leitung.foto">Foto<br>folgt</div>
+      <div>
+        <h3 data-t="leitung.name" style="margin-top:0"></h3>
+        <p class="rolle" data-t="leitung.rolle"></p>
+        <h3 data-t="leitung.wer_titel"></h3>
+        <div data-ps="leitung.wer_text"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="anmeldung">
+    <h2 data-t="anmeldung.titel"></h2>
+    <p data-t="anmeldung.text"></p>
+    <ul data-list="anmeldung.bedingungen"></ul>
+    <form name="anmeldung" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <p hidden><label>Nicht ausfüllen: <input name="bot-field"></label></p>
+      <label><span data-t="anmeldung.formular.vorname"></span><input name="vorname" required autocomplete="given-name"></label>
+      <label><span data-t="anmeldung.formular.nachname"></span><input name="nachname" required autocomplete="family-name"></label>
+      <label><span data-t="anmeldung.formular.email"></span><input name="email" type="email" required autocomplete="email"></label>
+      <label><span data-t="anmeldung.formular.telefon"></span><input name="telefon" type="tel" autocomplete="tel"></label>
+      <label class="ganz"><span data-t="anmeldung.formular.kurs"></span><select name="kurs" data-opts="anmeldung.formular.kurs_optionen"></select></label>
+      <label class="ganz"><span data-t="anmeldung.formular.nachricht"></span><textarea name="nachricht" rows="3"></textarea></label>
+      <label class="check"><input type="checkbox" name="zustimmung" value="ja" required><span data-t="anmeldung.formular.zustimmung"></span></label>
+      <button class="btn" type="submit" data-t="anmeldung.formular.knopf"></button>
+    </form>
+  </section>
+
+  <section id="kontakt">
+    <h2 data-t="kontakt.titel"></h2>
+    <p data-t="kontakt.text"></p>
+    <p data-t="kontakt.email"></p>
+  </section>
+</main>
+
+<footer>
+  <span data-t="fuss.text"></span><br>
+  <a href="#" data-t="fuss.impressum"></a><a href="#" data-t="fuss.datenschutz"></a>
+</footer>
+<script src="inhalt.js"></script>
+</body>
+</html>

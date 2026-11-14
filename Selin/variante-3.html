@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selin Stoll – MBSR</title>
+<meta name="description" content="">
+<style>
+  :root {
+    --bg: #faf8f5; --text: #283231; --muted: #6b7573; --accent: #3d7a74; --sand: #efe8dd; --card: #ffffff; --line: #e7e0d5;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.7 var(--sans); }
+  a { color: var(--accent); }
+  mark.offen { background: #fff1a8; color: inherit; padding: 0 .2em; border-radius: 3px; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+
+  .top { display: flex; justify-content: flex-end; align-items: center; gap: 16px; flex-wrap: wrap; padding: 18px 0; }
+  .top .name { font-family: var(--serif); font-size: 22px; }
+  .top nav { display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; }
+  .top nav a { color: var(--text); text-decoration: none; }
+  .band { height: 380px; background: url(bilder/meer-band.jpg) center/cover; border-radius: 10px; display: flex; align-items: flex-end; padding: 32px 32px 76px; position: relative; overflow: hidden; }
+  .band::before { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(15,35,35,.55), rgba(15,35,35,0) 65%); }
+  .band > div { position: relative; color: #fff; max-width: 560px; }
+  .band p { margin: 0 0 6px; letter-spacing: .14em; text-transform: uppercase; font-size: 12px; }
+  .band h1 { font-family: var(--serif); font-weight: normal; font-size: clamp(32px, 5vw, 50px); line-height: 1.15; margin: 0; }
+
+  .karten { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: -36px 24px 0; position: relative; }
+  .karte { background: var(--card); border-radius: 8px; padding: 20px 22px; box-shadow: 0 6px 24px rgba(40,50,49,.08); }
+  .karte small { color: var(--muted); text-transform: uppercase; letter-spacing: .12em; font-size: 11px; }
+  .karte div { font-family: var(--serif); font-size: 19px; line-height: 1.35; margin-top: 4px; }
+  .karte .btn { margin-top: 8px; }
+  .btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 6px; border: 0; font: 600 15px var(--sans); cursor: pointer; }
+
+  section { padding: 72px 0 0; }
+  h2 { font-family: var(--serif); font-weight: normal; font-size: 32px; margin: 0 0 18px; }
+  h3 { font-size: 16px; margin: 0 0 8px; color: var(--accent); }
+  .zwei { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; }
+  .seite { background: var(--sand); border-radius: 8px; padding: 22px 24px; align-self: start; }
+  .seite ul { padding-left: 1.1em; margin: 0 0 18px; } .seite ul:last-child { margin-bottom: 0; }
+  .hinweis { font-size: 14px; color: var(--muted); }
+  dl { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  dl div { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; }
+  dt { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; } dd { margin: 2px 0 0; }
+  dl div.tagtext { background: var(--sand); border-color: var(--sand); color: var(--muted); font-size: 15px; }
+  .zeitraum { font-family: var(--serif); font-size: 22px; margin: -6px 0 18px; color: var(--accent); }
+  .tag { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 26px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; }
+  .tag .ort { border-left: 1px solid var(--line); padding-left: 24px; }
+  .leitung { display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: start; }
+  .foto { width: 200px; aspect-ratio: 4/5; border-radius: 8px; background: var(--sand); display: grid; place-items: center; color: var(--muted); font-size: 13px; overflow: hidden; }
+  .foto img { width: 100%; height: 100%; object-fit: cover; }
+  .rolle { color: var(--muted); margin-top: -10px; }
+  .anmeldung { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; }
+  form { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  label { display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
+  label.ganz, label.check, form .btn { grid-column: 1 / -1; }
+  input, select, textarea { font: 16px var(--sans); padding: 9px 11px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--text); }
+  label.check { display: flex; gap: 10px; align-items: flex-start; color: var(--text); font-size: 14px; }
+  label.check input { margin-top: 5px; }
+  form .btn { justify-self: start; }
+  footer { margin-top: 80px; padding: 24px 0 36px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); display: flex; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
+  footer a { color: var(--muted); margin-left: 12px; }
+  @media (max-width: 760px) {
+    .band { height: 300px; padding: 22px 22px 56px; }
+    .karten { grid-template-columns: 1fr; margin: -24px 10px 0; }
+    .zwei, .tag, .leitung, .anmeldung, form, dl { grid-template-columns: 1fr; }
+    .tag .ort { border-left: 0; border-top: 1px solid var(--line); padding: 16px 0 0; }
+    .foto { width: 160px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <nav data-nav="kopf.navigation"></nav>
+  </header>
+
+  <div class="band">
+    <div>
+      <p data-t="kopf.untertitel"></p>
+      <h1 data-t="start.titel"></h1>
+    </div>
+  </div>
+
+  <div class="karten">
+    <div class="karte"><small data-t="daten.beschriftungen.kurstermine"></small><div data-t="daten.kurstermine"></div></div>
+    <div class="karte"><small data-t="daten.beschriftungen.tag"></small><div data-t="daten.tag"></div></div>
+    <div class="karte"><small data-t="anmeldung.titel"></small><div><a class="btn" href="#anmeldung" data-t="start.knopf"></a></div></div>
+  </div>
+
+  <section id="kurs">
+    <div class="zwei">
+      <div>
+        <h2 data-t="kurs.titel"></h2>
+        <div data-ps="kurs.absaetze"></div>
+        <p class="hinweis" data-t="kurs.hinweis"></p>
+      </div>
+      <div class="seite">
+        <h3 data-t="kurs.elemente_titel"></h3>
+        <ul data-list="kurs.elemente"></ul>
+        <h3 data-t="kurs.fuer_wen_titel"></h3>
+        <ul data-list="kurs.fuer_wen"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="daten">
+    <h2 data-t="daten.titel"></h2>
+    <dl>
+      <div><dt data-t="daten.beschriftungen.kurstermine"></dt><dd data-t="daten.kurstermine"></dd></div>
+      <div><dt data-t="daten.beschriftungen.tag"></dt><dd data-t="daten.tag"></dd></div>
+      <div><dt data-t="daten.beschriftungen.ort"></dt><dd><span data-t="daten.ort"></span><br><a data-href="daten.karte_link" data-t="daten.karte_text" target="_blank" rel="noopener"></a></dd></div>
+      <div><dt data-t="daten.beschriftungen.gruppe"></dt><dd data-t="daten.gruppe"></dd></div>
+      <div><dt data-t="daten.beschriftungen.kosten"></dt><dd data-t="daten.kosten"></dd></div>
+      <div class="tagtext"><dd data-t="daten.tag_text"></dd></div>
+    </dl>
+  </section>
+
+  <section id="leitung">
+    <div class="leitung">
+      <div class="foto" data-foto="leitung.foto">Foto folgt</div>
+      <div>
+        <h2 data-t="leitung.titel"></h2>
+        <p><strong data-t="leitung.name"></strong></p>
+        <p class="rolle" data-t="leitung.rolle"></p>
+        <h3 data-t="leitung.wer_titel"></h3>
+        <div data-ps="leitung.wer_text"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="anmeldung">
+    <div class="anmeldung">
+      <div>
+        <h2 data-t="anmeldung.titel"></h2>
+        <p data-t="anmeldung.text"></p>
+        <ul data-list="anmeldung.bedingungen"></ul>
+        <h3 data-t="kontakt.titel"></h3>
+        <p data-t="kontakt.text"></p>
+        <p data-t="kontakt.email"></p>
+      </div>
+      <form name="anmeldung" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <p hidden><label>Nicht ausfüllen: <input name="bot-field"></label></p>
+        <label><span data-t="anmeldung.formular.vorname"></span><input name="vorname" required autocomplete="given-name"></label>
+        <label><span data-t="anmeldung.formular.nachname"></span><input name="nachname" required autocomplete="family-name"></label>
+        <label><span data-t="anmeldung.formular.email"></span><input name="email" type="email" required autocomplete="email"></label>
+        <label><span data-t="anmeldung.formular.telefon"></span><input name="telefon" type="tel" autocomplete="tel"></label>
+        <label class="ganz"><span data-t="anmeldung.formular.kurs"></span><select name="kurs" data-opts="anmeldung.formular.kurs_optionen"></select></label>
+        <label class="ganz"><span data-t="anmeldung.formular.nachricht"></span><textarea name="nachricht" rows="3"></textarea></label>
+        <label class="check"><input type="checkbox" name="zustimmung" value="ja" required><span data-t="anmeldung.formular.zustimmung"></span></label>
+        <button class="btn" type="submit" data-t="anmeldung.formular.knopf"></button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <span data-t="fuss.text"></span>
+    <span><a href="#" data-t="fuss.impressum"></a><a href="#" data-t="fuss.datenschutz"></a></span>
+  </footer>
+</div>
+<script src="inhalt.js"></script>
+</body>
+</html>

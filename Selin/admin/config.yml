@@ -1,54 +1,169 @@
+# Admin-Panel (Decap CMS) für selinstoll.ch
+# Selin meldet sich unter /admin/ an und ändert hier alle Texte der Webseite.
+# Jede Änderung wird als Commit im GitHub-Repo gespeichert; Netlify
+# veröffentlicht sie danach automatisch (ca. 1 Minute).
+
 backend:
   name: git-gateway
-  branch: main
+  branch: neu            # Vorschau-Zweig. Beim Livegang auf "main" ändern.
 
-media_folder: "images"
-public_folder: "/images"
+# Nur auf localhost aktiv (Test mit "npx decap-server"); online ohne Wirkung.
+local_backend: true
 
-locale: es
+locale: de
+site_url: https://selinstoll.ch
+display_url: https://selinstoll.ch
+
+# Bilder, die Selin hochlädt (z. B. ihr Porträt)
+media_folder: Selin/bilder
+public_folder: /bilder
 
 collections:
-  - name: "pagina"
-    label: "Página principal"
+  - name: seite
+    label: Webseite
+    editor:
+      preview: false
     files:
-
-      - name: "inicio"
-        label: "🏠 Inicio"
-        file: "_content/inicio.json"
+      - name: inhalt
+        label: Alle Texte der Webseite
+        file: Selin/inhalt.json
+        format: json
         fields:
-          - { label: "Título principal", name: "titulo", widget: "string" }
-          - { label: "Subtítulo", name: "subtitulo", widget: "text" }
-          - { label: "Texto del botón principal", name: "boton1", widget: "string" }
-          - { label: "Texto del botón secundario", name: "boton2", widget: "string" }
-
-      - name: "sobre_mi"
-        label: "👤 Sobre mí"
-        file: "_content/sobre_mi.json"
-        fields:
-          - { label: "Foto", name: "foto", widget: "image", required: false }
-          - { label: "Título", name: "titulo", widget: "string" }
-          - { label: "Texto 1", name: "texto1", widget: "text" }
-          - { label: "Texto 2", name: "texto2", widget: "text" }
-          - { label: "Texto 3", name: "texto3", widget: "text" }
-
-      - name: "servicios"
-        label: "🌿 Servicios"
-        file: "_content/servicios.json"
-        fields:
-          - label: "Servicios"
-            name: "lista"
-            widget: "list"
+          - label: Kursdaten
+            name: daten
+            widget: object
             fields:
-              - { label: "Icono (emoji)", name: "icono", widget: "string" }
-              - { label: "Título", name: "titulo", widget: "string" }
-              - { label: "Descripción", name: "descripcion", widget: "text" }
-              - { label: "Precio", name: "precio", widget: "string" }
+              - { label: Überschrift, name: titel, widget: string }
+              - { label: Kurstermine, name: kurstermine, widget: string, hint: "z. B. 2. März – 20. April 2027" }
+              - { label: Tag der Achtsamkeit, name: tag, widget: string, hint: "Datum, z. B. 10. April 2027" }
+              - { label: Ort, name: ort, widget: string }
+              - { label: Gruppe, name: gruppe, widget: string }
+              - { label: Kosten, name: kosten, widget: string }
+              - { label: Text zum Tag der Achtsamkeit, name: tag_text, widget: text }
+              - { label: Text des Karten-Links, name: karte_text, widget: string }
+              - { label: Google-Maps-Link, name: karte_link, widget: string }
+              - label: Beschriftungen der Zeilen
+                name: beschriftungen
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: Kurstermine, name: kurstermine, widget: string }
+                  - { label: Tag der Achtsamkeit, name: tag, widget: string }
+                  - { label: Ort, name: ort, widget: string }
+                  - { label: Gruppe, name: gruppe, widget: string }
+                  - { label: Kosten, name: kosten, widget: string }
 
-      - name: "contacto"
-        label: "✉️ Contacto"
-        file: "_content/contacto.json"
-        fields:
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Ciudad", name: "ciudad", widget: "string" }
-          - { label: "Instagram", name: "instagram", widget: "string" }
-          - { label: "Frase inspiradora", name: "frase", widget: "text" }
+          - label: Startbereich (oben)
+            name: start
+            widget: object
+            fields:
+              - { label: Grosser Titel, name: titel, widget: string }
+              - { label: Text unter dem Titel, name: text, widget: text }
+              - { label: Text des Knopfs, name: knopf, widget: string }
+
+          - label: Was ist MBSR?
+            name: kurs
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Überschrift, name: titel, widget: string }
+              - label: Absätze
+                name: absaetze
+                widget: list
+                field: { label: Absatz, name: absatz, widget: text }
+              - { label: Überschrift «Was wir üben», name: elemente_titel, widget: string }
+              - label: Was wir üben
+                name: elemente
+                widget: list
+                field: { label: Punkt, name: punkt, widget: string }
+              - { label: Überschrift «Für wen», name: fuer_wen_titel, widget: string }
+              - label: Für wen ist der Kurs?
+                name: fuer_wen
+                widget: list
+                field: { label: Punkt, name: punkt, widget: string }
+              - { label: Hinweis (klein), name: hinweis, widget: text }
+
+          - label: Kursleitung / Über mich
+            name: leitung
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Überschrift, name: titel, widget: string }
+              - { label: Name, name: name, widget: string }
+              - { label: Ausbildung / Qualifikation, name: rolle, widget: string }
+              - { label: Foto, name: foto, widget: image, required: false, choose_url: false }
+              - { label: Bildbeschreibung (für Screenreader), name: foto_alt, widget: string }
+              - { label: Überschrift «Wer ich bin», name: wer_titel, widget: string }
+              - label: Text «Wer ich bin»
+                name: wer_text
+                widget: list
+                field: { label: Absatz, name: absatz, widget: text }
+
+          - label: Anmeldung
+            name: anmeldung
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Überschrift, name: titel, widget: string }
+              - { label: Text, name: text, widget: text }
+              - label: Bedingungen
+                name: bedingungen
+                widget: list
+                field: { label: Bedingung, name: bedingung, widget: text }
+              - label: Formular-Beschriftungen
+                name: formular
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: Vorname, name: vorname, widget: string }
+                  - { label: Nachname, name: nachname, widget: string }
+                  - { label: E-Mail, name: email, widget: string }
+                  - { label: Telefon, name: telefon, widget: string }
+                  - { label: Kurs, name: kurs, widget: string }
+                  - label: Kurse zur Auswahl
+                    name: kurs_optionen
+                    widget: list
+                    field: { label: Kurs, name: kurs, widget: string }
+                  - { label: Nachricht, name: nachricht, widget: string }
+                  - { label: Zustimmung (Häkchen), name: zustimmung, widget: string }
+                  - { label: Text des Knopfs, name: knopf, widget: string }
+
+          - label: Kontakt
+            name: kontakt
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Überschrift, name: titel, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: E-Mail, name: email, widget: string }
+              - { label: Telefon, name: telefon, widget: string, required: false }
+
+          - label: Kopfzeile und Seite
+            name: kopf
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Kleine Zeile über dem Titel, name: untertitel, widget: string }
+              - label: Menü
+                name: navigation
+                widget: list
+                fields:
+                  - { label: Text, name: text, widget: string }
+                  - { label: Sprungziel (nicht ändern), name: ziel, widget: string }
+
+          - label: Google / Browser-Tab
+            name: seite
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Titel, name: titel, widget: string }
+              - { label: Beschreibung, name: beschreibung, widget: text }
+
+          - label: Fusszeile
+            name: fuss
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Text, name: text, widget: string }
+              - { label: Impressum (Linktext), name: impressum, widget: string }
+              - { label: Datenschutz (Linktext), name: datenschutz, widget: string }
