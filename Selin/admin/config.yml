@@ -167,7 +167,6 @@ collections:
                   - { label: Nachname, name: nachname, widget: string }
                   - { label: E-Mail, name: email, widget: string }
                   - { label: Telefon, name: telefon, widget: string }
-                  - { label: Thema, name: thema, widget: string }
                   - { label: Nachricht, name: nachricht, widget: string }
                   - { label: Text des Knopfs, name: knopf, widget: string }
               - { label: Danke-Seite – Überschrift, name: danke_titel, widget: string }
