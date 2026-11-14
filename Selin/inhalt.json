@@ -14,7 +14,6 @@
   },
   "start": {
     "titel": "Ankommen im Moment",
-    "text": "MBSR – Stressbewältigung durch Achtsamkeit. Ein Kurs in Zürich.",
     "knopf": "Zur Anmeldung"
   },
   "kurs": {
@@ -47,11 +46,12 @@
     "ort": "Wehntalerstrasse 3, 8057 Zürich",
     "gruppe": "4 bis max. 8 Teilnehmende",
     "kosten": "CHF 520",
-    "tag_text": "Der Tag der Achtsamkeit gehört zum Kurs: ein ganzer Tag in Stille – gemeinsam schweigen, sitzen, gehen und sich achtsam bewegen.",
-    "karte_text": "Ort auf der Karte ansehen",
+    "tag_text": "Der Tag der Achtsamkeit gehört zum Kurs: ein ganzer Tag in Stille – gemeinsam schweigen, sitzen, gehen und sich achtsam bewegen. Ein Raum, um die Übung zu vertiefen und ganz anzukommen.",
+    "tag_ort": "born.life",
+    "karte_text": "Auf der Karte ansehen",
     "karte_link": "https://maps.app.goo.gl/EbiFyoYE2J3AHVWLA",
     "beschriftungen": {
-      "kurstermine": "Kurstermine",
+      "kurs": "MBSR-Kurs",
       "tag": "Tag der Achtsamkeit",
       "ort": "Ort",
       "gruppe": "Gruppe",

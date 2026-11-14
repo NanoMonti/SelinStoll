@@ -35,19 +35,20 @@ collections:
             fields:
               - { label: Überschrift, name: titel, widget: string }
               - { label: Kurstermine, name: kurstermine, widget: string, hint: "z. B. 2. März – 20. April 2027" }
-              - { label: Tag der Achtsamkeit, name: tag, widget: string, hint: "Datum, z. B. 10. April 2027" }
+              - { label: Tag der Achtsamkeit (Datum), name: tag, widget: string, hint: "z. B. 10. April 2027" }
               - { label: Ort, name: ort, widget: string }
               - { label: Gruppe, name: gruppe, widget: string }
               - { label: Kosten, name: kosten, widget: string }
               - { label: Text zum Tag der Achtsamkeit, name: tag_text, widget: text }
+              - { label: Name des Ortes (Tag der Achtsamkeit), name: tag_ort, widget: string }
               - { label: Text des Karten-Links, name: karte_text, widget: string }
               - { label: Google-Maps-Link, name: karte_link, widget: string }
-              - label: Beschriftungen der Zeilen
+              - label: Beschriftungen
                 name: beschriftungen
                 widget: object
                 collapsed: true
                 fields:
-                  - { label: Kurstermine, name: kurstermine, widget: string }
+                  - { label: Karte oben «MBSR-Kurs», name: kurs, widget: string }
                   - { label: Tag der Achtsamkeit, name: tag, widget: string }
                   - { label: Ort, name: ort, widget: string }
                   - { label: Gruppe, name: gruppe, widget: string }
@@ -57,9 +58,8 @@ collections:
             name: start
             widget: object
             fields:
-              - { label: Grosser Titel, name: titel, widget: string }
-              - { label: Text unter dem Titel, name: text, widget: text }
-              - { label: Text des Knopfs, name: knopf, widget: string }
+              - { label: Grosser Titel (auf dem Bild), name: titel, widget: string }
+              - { label: Text des Knopfs «Zur Anmeldung», name: knopf, widget: string }
 
           - label: Was ist MBSR?
             name: kurs
