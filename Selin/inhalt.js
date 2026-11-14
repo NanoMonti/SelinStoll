@@ -46,14 +46,25 @@
       }).join('');
     });
     document.querySelectorAll('[data-href]').forEach(function (el) {
-      el.setAttribute('href', get(data, el.dataset.href) || '#');
+      var href = get(data, el.dataset.href);
+      // data-optional: Knopf ausblenden, solange kein Link eingetragen ist
+      if (!href && el.hasAttribute('data-optional')) { (el.closest('p') || el).hidden = true; return; }
+      el.setAttribute('href', href || '#');
+    });
+    // nur anzeigen, solange das genannte Feld leer ist (z. B. Termin-Link fehlt noch)
+    document.querySelectorAll('[data-wenn-leer]').forEach(function (el) {
+      if (get(data, el.dataset.wennLeer)) el.hidden = true;
+    });
+    // Werte für versteckte Formularfelder (z. B. welcher Kurs gebucht wird)
+    document.querySelectorAll('[data-val]').forEach(function (el) {
+      el.value = get(data, el.dataset.val) || '';
     });
     document.querySelectorAll('[data-foto]').forEach(function (el) {
       var src = get(data, el.dataset.foto);
       if (src) { el.innerHTML = '<img src="' + esc(src) + '" alt="' + esc(get(data, 'leitung.foto_alt') || '') + '">'; el.classList.add('hat-foto'); }
     });
   }
-  fetch('inhalt.json', { cache: 'no-store' })
+  fetch('/inhalt.json', { cache: 'no-store' })
     .then(function (r) { return r.json(); })
     .then(fill)
     .catch(function (e) { console.error('inhalt.json konnte nicht geladen werden', e); });

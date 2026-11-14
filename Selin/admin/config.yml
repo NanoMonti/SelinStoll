@@ -35,14 +35,14 @@ collections:
             fields:
               - { label: Überschrift, name: titel, widget: string }
               - { label: Kurstermine, name: kurstermine, widget: string, hint: "z. B. 2. März – 20. April 2027" }
-              - { label: Tag der Achtsamkeit, name: tag, widget: string, hint: "Datum, z. B. 10. April 2027" }
+              - { label: Tag der Achtsamkeit (Datum), name: tag, widget: string, hint: "z. B. 10. April 2027" }
               - { label: Ort, name: ort, widget: string }
               - { label: Gruppe, name: gruppe, widget: string }
               - { label: Kosten, name: kosten, widget: string }
               - { label: Text zum Tag der Achtsamkeit, name: tag_text, widget: text }
               - { label: Text des Karten-Links, name: karte_text, widget: string }
               - { label: Google-Maps-Link, name: karte_link, widget: string }
-              - label: Beschriftungen der Zeilen
+              - label: Beschriftungen der Kästchen
                 name: beschriftungen
                 widget: object
                 collapsed: true
@@ -53,9 +53,17 @@ collections:
                   - { label: Gruppe, name: gruppe, widget: string }
                   - { label: Kosten, name: kosten, widget: string }
 
+          - label: Knopf unter den Kursdaten
+            name: buchen
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Text des Knopfs, name: knopf, widget: string }
+
           - label: Startbereich (oben)
             name: start
             widget: object
+            collapsed: true
             fields:
               - { label: Grosser Titel (auf dem Bild), name: titel, widget: string }
 
@@ -97,7 +105,7 @@ collections:
                 widget: list
                 field: { label: Absatz, name: absatz, widget: text }
 
-          - label: Anmeldung
+          - label: Seite «Kurs buchen» (Anmeldeformular)
             name: anmeldung
             widget: object
             collapsed: true
@@ -115,28 +123,56 @@ collections:
                 fields:
                   - { label: Vorname, name: vorname, widget: string }
                   - { label: Nachname, name: nachname, widget: string }
-                  - { label: E-Mail, name: email, widget: string }
+                  - { label: Geburtsdatum, name: geburtsdatum, widget: string }
                   - { label: Telefon, name: telefon, widget: string }
-                  - { label: Kurs, name: kurs, widget: string }
-                  - label: Kurse zur Auswahl
-                    name: kurs_optionen
+                  - { label: Strasse und Nr., name: strasse, widget: string }
+                  - { label: PLZ, name: plz, widget: string }
+                  - { label: Ort, name: ort, widget: string }
+                  - { label: E-Mail, name: email, widget: string }
+                  - { label: Frage nach dem Kontaktweg, name: kontaktweg, widget: string }
+                  - label: Kontaktwege zur Auswahl
+                    name: kontaktweg_optionen
                     widget: list
-                    field: { label: Kurs, name: kurs, widget: string }
-                  - { label: Nachricht, name: nachricht, widget: string }
+                    field: { label: Kontaktweg, name: weg, widget: string }
                   - { label: Zustimmung (Häkchen), name: zustimmung, widget: string }
                   - { label: Text des Knopfs, name: knopf, widget: string }
 
-          - label: Kontakt
+          - label: Seite «Danke» nach der Anmeldung
+            name: danke
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Überschrift, name: titel, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Text zum Termin, name: termin_text, widget: text }
+              - { label: Text des Termin-Knopfs, name: termin_knopf, widget: string }
+              - { label: Link zur Terminbuchung (z. B. Calendly), name: termin_link, widget: string, required: false, hint: "Leer lassen, solange es keinen Link gibt – dann erscheint der Text darunter." }
+              - { label: Text, solange es keinen Termin-Link gibt, name: ohne_link, widget: text }
+              - { label: Link «Zurück zur Startseite», name: zurueck, widget: string }
+
+          - label: Kontakt (unten) und Danke-Seite
             name: kontakt
             widget: object
             collapsed: true
             fields:
               - { label: Überschrift, name: titel, widget: string }
               - { label: Text, name: text, widget: text }
-              - { label: E-Mail, name: email, widget: string }
-              - { label: Telefon, name: telefon, widget: string, required: false }
+              - label: Formular-Beschriftungen
+                name: formular
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: Vorname, name: vorname, widget: string }
+                  - { label: Nachname, name: nachname, widget: string }
+                  - { label: E-Mail, name: email, widget: string }
+                  - { label: Telefon, name: telefon, widget: string }
+                  - { label: Thema, name: thema, widget: string }
+                  - { label: Nachricht, name: nachricht, widget: string }
+                  - { label: Text des Knopfs, name: knopf, widget: string }
+              - { label: Danke-Seite – Überschrift, name: danke_titel, widget: string }
+              - { label: Danke-Seite – Text, name: danke_text, widget: text }
 
-          - label: Kopfzeile und Seite
+          - label: Kopfzeile und Menü
             name: kopf
             widget: object
             collapsed: true
@@ -147,7 +183,7 @@ collections:
                 widget: list
                 fields:
                   - { label: Text, name: text, widget: string }
-                  - { label: Sprungziel (nicht ändern), name: ziel, widget: string }
+                  - { label: Ziel (nicht ändern), name: ziel, widget: string }
 
           - label: Google / Browser-Tab
             name: seite

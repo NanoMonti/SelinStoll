@@ -5,80 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Selin Stoll – MBSR</title>
 <meta name="description" content="">
-<style>
-  :root {
-    --bg: #faf8f5; --text: #283231; --muted: #6b7573; --accent: #3d7a74; --sand: #efe8dd; --card: #ffffff; --line: #e7e0d5;
-    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
-    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.7 var(--sans); }
-  a { color: var(--accent); }
-  mark.offen { background: #fff1a8; color: inherit; padding: 0 .2em; border-radius: 3px; }
-  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
-
-  .top { display: flex; justify-content: flex-end; align-items: center; gap: 16px; flex-wrap: wrap; padding: 18px 0; }
-  .top .name { font-family: var(--serif); font-size: 22px; }
-  .top nav { display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; }
-  .top nav a { color: var(--text); text-decoration: none; }
-  .band { height: 380px; background: url(bilder/meer-band.jpg) center/cover; border-radius: 10px; display: flex; align-items: flex-end; padding: 32px; position: relative; overflow: hidden; }
-  .band::before { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(15,35,35,.55), rgba(15,35,35,0) 65%); }
-  .band > div { position: relative; color: #fff; max-width: 560px; }
-  .band p { margin: 0 0 6px; letter-spacing: .14em; text-transform: uppercase; font-size: 12px; }
-  .band h1 { font-family: var(--serif); font-weight: normal; font-size: clamp(32px, 5vw, 50px); line-height: 1.15; margin: 0; }
-
-  .btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 6px; border: 0; font: 600 15px var(--sans); cursor: pointer; }
-
-  section { padding: 72px 0 0; }
-  h2 { font-family: var(--serif); font-weight: normal; font-size: 32px; margin: 0 0 18px; }
-  h3 { font-size: 16px; margin: 0 0 8px; color: var(--accent); }
-  .zwei { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; }
-  .seite { background: var(--sand); border-radius: 8px; padding: 22px 24px; align-self: start; }
-  .seite ul { padding-left: 1.1em; margin: 0 0 18px; } .seite ul:last-child { margin-bottom: 0; }
-  .hinweis { font-size: 14px; color: var(--muted); }
-  dl { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  dl div { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; }
-  dt { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; } dd { margin: 2px 0 0; }
-  dl div.tagtext { background: var(--sand); border-color: var(--sand); color: var(--muted); font-size: 15px; }
-  .zeitraum { font-family: var(--serif); font-size: 22px; margin: -6px 0 18px; color: var(--accent); }
-  .tag { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 26px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; }
-  .tag .ort { border-left: 1px solid var(--line); padding-left: 24px; }
-  .leitung { display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: start; }
-  .foto { width: 200px; aspect-ratio: 4/5; border-radius: 8px; background: var(--sand); display: grid; place-items: center; color: var(--muted); font-size: 13px; overflow: hidden; }
-  .foto img { width: 100%; height: 100%; object-fit: cover; }
-  .rolle { color: var(--muted); margin-top: -10px; }
-  .anmeldung { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; }
-  form { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  label { display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
-  label.ganz, label.check, form .btn { grid-column: 1 / -1; }
-  input, select, textarea { font: 16px var(--sans); padding: 9px 11px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--text); }
-  label.check { display: flex; gap: 10px; align-items: flex-start; color: var(--text); font-size: 14px; }
-  label.check input { margin-top: 5px; }
-  form .btn { justify-self: start; }
-  footer { margin-top: 80px; padding: 24px 0 36px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); display: flex; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
-  footer a { color: var(--muted); margin-left: 12px; }
-  @media (max-width: 760px) {
-    .band { height: 300px; padding: 22px; }
-    .zwei, .tag, .leitung, .anmeldung, form, dl { grid-template-columns: 1fr; }
-    .tag .ort { border-left: 0; border-top: 1px solid var(--line); padding: 16px 0 0; }
-    .foto { width: 160px; }
-  }
-</style>
+<link rel="preload" href="fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/nunito-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="stil.css">
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <nav data-nav="kopf.navigation"></nav>
-  </header>
+<header class="top wrap">
+  <nav data-nav="kopf.navigation"></nav>
+</header>
 
-  <div class="band">
-    <div>
-      <p data-t="kopf.untertitel"></p>
-      <h1 data-t="start.titel"></h1>
-    </div>
+<div class="band">
+  <div class="wrap">
+    <p data-t="kopf.untertitel"></p>
+    <h1 data-t="start.titel"></h1>
   </div>
+</div>
 
+<main class="wrap">
   <section id="kurs">
     <div class="zwei">
       <div>
@@ -105,6 +48,7 @@
       <div><dt data-t="daten.beschriftungen.kosten"></dt><dd data-t="daten.kosten"></dd></div>
       <div class="tagtext"><dd data-t="daten.tag_text"></dd></div>
     </dl>
+    <p class="buchen"><a class="btn gross" href="/anmeldung.html" data-t="buchen.knopf"></a></p>
   </section>
 
   <section id="leitung">
@@ -120,35 +64,30 @@
     </div>
   </section>
 
-  <section id="anmeldung">
-    <div class="anmeldung">
+  <section id="kontakt">
+    <div class="kontakt">
       <div>
-        <h2 data-t="anmeldung.titel"></h2>
-        <p data-t="anmeldung.text"></p>
-        <ul data-list="anmeldung.bedingungen"></ul>
-        <h3 data-t="kontakt.titel"></h3>
+        <h2 data-t="kontakt.titel"></h2>
         <p data-t="kontakt.text"></p>
-        <p data-t="kontakt.email"></p>
       </div>
-      <form name="anmeldung" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <p hidden><label>Nicht ausfüllen: <input name="bot-field"></label></p>
-        <label><span data-t="anmeldung.formular.vorname"></span><input name="vorname" required autocomplete="given-name"></label>
-        <label><span data-t="anmeldung.formular.nachname"></span><input name="nachname" required autocomplete="family-name"></label>
-        <label><span data-t="anmeldung.formular.email"></span><input name="email" type="email" required autocomplete="email"></label>
-        <label><span data-t="anmeldung.formular.telefon"></span><input name="telefon" type="tel" autocomplete="tel"></label>
-        <label class="ganz"><span data-t="anmeldung.formular.kurs"></span><select name="kurs" data-opts="anmeldung.formular.kurs_optionen"></select></label>
-        <label class="ganz"><span data-t="anmeldung.formular.nachricht"></span><textarea name="nachricht" rows="3"></textarea></label>
-        <label class="check"><input type="checkbox" name="zustimmung" value="ja" required><span data-t="anmeldung.formular.zustimmung"></span></label>
-        <button class="btn" type="submit" data-t="anmeldung.formular.knopf"></button>
+      <form name="kontakt" method="POST" action="/kontakt-danke.html" data-netlify="true" netlify-honeypot="bot-field">
+        <p hidden><label>Nicht ausfüllen: <input name="bot-field"></label></p>
+        <label><span data-t="kontakt.formular.vorname"></span><input name="vorname" required autocomplete="given-name"></label>
+        <label><span data-t="kontakt.formular.nachname"></span><input name="nachname" required autocomplete="family-name"></label>
+        <label><span data-t="kontakt.formular.email"></span><input name="email" type="email" required autocomplete="email"></label>
+        <label><span data-t="kontakt.formular.telefon"></span><input name="telefon" type="tel" autocomplete="tel"></label>
+        <label class="ganz"><span data-t="kontakt.formular.thema"></span><input name="thema" required></label>
+        <label class="ganz"><span data-t="kontakt.formular.nachricht"></span><textarea name="nachricht" rows="4" required></textarea></label>
+        <button class="btn" type="submit" data-t="kontakt.formular.knopf"></button>
       </form>
     </div>
   </section>
+</main>
 
-  <footer>
-    <span data-t="fuss.text"></span>
-    <span><a href="#" data-t="fuss.impressum"></a><a href="#" data-t="fuss.datenschutz"></a></span>
-  </footer>
-</div>
-<script src="inhalt.js"></script>
+<footer class="wrap">
+  <span data-t="fuss.text"></span>
+  <span><a href="#" data-t="fuss.impressum"></a><a href="#" data-t="fuss.datenschutz"></a></span>
+</footer>
+<script src="/inhalt.js"></script>
 </body>
 </html>

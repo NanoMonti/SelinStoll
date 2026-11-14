@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kurs buchen – Selin Stoll</title>
+<link rel="stylesheet" href="/stil.css">
+</head>
+<body>
+<header class="top wrap">
+  <nav data-nav="kopf.navigation"></nav>
+</header>
+
+<div class="band klein">
+  <div class="wrap">
+    <p data-t="kopf.untertitel"></p>
+    <h1 data-t="anmeldung.titel"></h1>
+  </div>
+</div>
+
+<main class="wrap schmal">
+  <section>
+    <p class="kurszeile"><span data-t="daten.beschriftungen.kurstermine"></span>: <span data-t="daten.kurstermine"></span></p>
+    <p data-t="anmeldung.text"></p>
+    <ul data-list="anmeldung.bedingungen"></ul>
+
+    <form name="anmeldung" method="POST" action="/danke.html" data-netlify="true" netlify-honeypot="bot-field">
+      <p hidden><label>Nicht ausfüllen: <input name="bot-field"></label></p>
+      <input type="hidden" name="kurs" data-val="daten.kurstermine">
+      <label><span data-t="anmeldung.formular.vorname"></span><input name="vorname" required autocomplete="given-name"></label>
+      <label><span data-t="anmeldung.formular.nachname"></span><input name="nachname" required autocomplete="family-name"></label>
+      <label><span data-t="anmeldung.formular.geburtsdatum"></span><input name="geburtsdatum" type="date" required autocomplete="bday"></label>
+      <label><span data-t="anmeldung.formular.telefon"></span><input name="telefon" type="tel" required autocomplete="tel"></label>
+      <label class="ganz"><span data-t="anmeldung.formular.strasse"></span><input name="strasse" required autocomplete="street-address"></label>
+      <label><span data-t="anmeldung.formular.plz"></span><input name="plz" required inputmode="numeric" autocomplete="postal-code"></label>
+      <label><span data-t="anmeldung.formular.ort"></span><input name="ort" required autocomplete="address-level2"></label>
+      <label class="ganz"><span data-t="anmeldung.formular.email"></span><input name="email" type="email" required autocomplete="email"></label>
+      <label class="ganz"><span data-t="anmeldung.formular.kontaktweg"></span><select name="kontaktweg" required data-opts="anmeldung.formular.kontaktweg_optionen"></select></label>
+      <label class="check"><input type="checkbox" name="zustimmung" value="ja" required><span data-t="anmeldung.formular.zustimmung"></span></label>
+      <button class="btn gross" type="submit" data-t="anmeldung.formular.knopf"></button>
+    </form>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span data-t="fuss.text"></span>
+  <span><a href="#" data-t="fuss.impressum"></a><a href="#" data-t="fuss.datenschutz"></a></span>
+</footer>
+<script src="/inhalt.js"></script>
+</body>
+</html>
