@@ -134,6 +134,7 @@ collections:
                     name: kontaktweg_optionen
                     widget: list
                     field: { label: Kontaktweg, name: weg, widget: string }
+                  - { label: Nachricht, name: nachricht, widget: string }
                   - { label: Zustimmung (Häkchen), name: zustimmung, widget: string }
                   - { label: Text des Knopfs, name: knopf, widget: string }
 

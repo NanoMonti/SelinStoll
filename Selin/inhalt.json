@@ -8,8 +8,8 @@
     "navigation": [
       { "text": "Kurs", "ziel": "/#kurs" },
       { "text": "Daten", "ziel": "/#daten" },
-      { "text": "Über mich", "ziel": "/#leitung" },
       { "text": "Kurs buchen", "ziel": "/anmeldung.html" },
+      { "text": "Über mich", "ziel": "/#leitung" },
       { "text": "Kontakt", "ziel": "/#kontakt" }
     ]
   },
@@ -88,6 +88,7 @@
       "email": "E-Mail",
       "kontaktweg": "Wie möchten Sie für das Vorgespräch kontaktiert werden?",
       "kontaktweg_optionen": ["Telefon", "E-Mail", "Videoanruf"],
+      "nachricht": "Nachricht (optional)",
       "zustimmung": "Ich bin einverstanden, dass Selin Stoll meine Angaben für die Kursanmeldung verwendet.",
       "knopf": "Anmeldung senden"
     }
